@@ -1,0 +1,12 @@
+State Variables:
+- robot position & velocity (all 4 robots) with covariance
+- robot configuration (our 2 robots)
+    - robot mass, moment of inertia
+    - loading (nb & type of elements)
+    - arm loading (type of element)
+- fire position & orientation(standing / level(colour)) with variance
+    - for some fires (the ones being currently manipulated):
+        - orientation & position in 3D with complete covariance matrix
+- fruit presence & colour (probabilities)
+- score estimate
+- time since game start (special variable)
