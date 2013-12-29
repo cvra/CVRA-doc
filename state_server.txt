@@ -1,0 +1,48 @@
+
+
+    State Server
+
+
+
+
+- State variable package:
+    - UID
+    - State variable sequence number
+    - Timestamp
+    - Data
+    - Array of map of sensor UID to last sensor timestamp
+
+- Subscription package (has datatype 'Subscription')
+    - Variable type hash
+    - UIDs of sensors to track
+
+- Sensor package
+    - UID
+    - Timestamp
+    - Data
+
+
+*********
+
+- State variables
+    - UID
+    - State variable sequence number
+    - Timestamp
+    - Data
+    - List of 'Client-Objects'
+        - TCP socket
+        - Subscribed sensors for local rebase (sensor UID)
+
+*********
+
+- History?
+
+- Variable type reuse?
+
+- Hierarchy?
+
+- What if more than one sensor value has been received before the state update
+  could be finished?
+
+- Who decides when to do a state update? (First come first served wtih
+  locking or buffering and dispatching?)
