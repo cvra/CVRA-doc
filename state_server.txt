@@ -43,9 +43,6 @@ State Server
                 - Hash
                 - Variable byte array 
     
-    - What if more than one sensor value has been received before the state update
-      could be finished?
-
     - (Backup?)
 
     - Sensor calibration?
@@ -72,7 +69,7 @@ Libs & Tools
         - Callback corresponding to message hash
 
     - Kalman filter
-        - Unscented Kalman filter
+        - Sigma-Point Kalman Filter
 
     - Particle filter?
 
