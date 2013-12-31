@@ -1,0 +1,52 @@
+
+
+
+*** Subscription Server ******************************************************
+    main:
+        listen on TCP socket
+        for each connection
+            add socket to list of open sockets
+
+        wait on all sockets for data
+        on data input
+            deserialize messages
+            if subscription
+                create client connection object
+                link client connection object to state variable corresponding to UID
+        on connection timeout/close
+            remove client connection object from state vraiable
+            remove socket from list of open sockets
+        logging
+
+    client connection object:
+        TCP socket
+
+
+*** Sensor Input Server ******************************************************
+    main:
+        listen on  TCP socket
+        for each connection
+            add socket to list of open sockets
+
+        wait on all sockets for data
+        on data input
+            deserialize messages
+            if sensor value
+                lock TCP socket
+                update corresponding state variables 
+                unlock TCP socket
+        on connection timeout/close
+            remove socket from list of open sockets
+
+
+*** State Variable Distribution Server ***************************************
+    push ( State Variable ):
+        for each client connection object in updated state variable
+            push serialized data over TCP
+
+
+*** State Estimation *********************************************************
+    main:
+        magic
+        some more magic
+        State Variable Distribution Server . push ( state variable )
