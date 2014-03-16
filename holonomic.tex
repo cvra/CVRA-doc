@@ -156,6 +156,26 @@ inv([[-D1, sin(b1), -cos(b1)],[-D2, sin(b2), -cos(b2)],[-D3, sin(b3), -cos(b3)]]
             & D_1 sin \beta_3-D_3 sin \beta_1
             & D_2 sin \beta_1-D_1 sin \beta_2
     \end{bmatrix}
-\end{multiline}
+\end{multline}
+The first row in the above matrix can be expressed
+with the sin of the angle difference using:
+\begin{equation}
+    sin(\alpha \pm \beta) = sin(\alpha)cos(\beta)
+    \pm cos(\alpha)sin(\beta)
+\end{equation}
+This gives the following matrix (without the scaling factor):
+\begin{equation}
+    \begin{bmatrix}
+        sin(\beta_3 - \beta_2)
+            & sin(\beta_1 - \beta_3)
+            & sin(\beta_2 - \beta_1) \\
+        D_3 cos \beta_2-D_2 cos \beta_3
+            & D_1 cos \beta_3-D_3 cos \beta_1
+            & D_2 cos \beta_1-D_1 cos \beta_2\\
+        D_3 sin \beta_2-D_2 sin \beta_3
+            & D_1 sin \beta_3-D_3 sin \beta_1
+            & D_2 sin \beta_1-D_1 sin \beta_2
+    \end{bmatrix}
+\end{equation}
 
 \end{document}
